@@ -1,0 +1,4 @@
+export XDG_CONFIG_HOME=$HOME/.config
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
+
