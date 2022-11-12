@@ -24,11 +24,28 @@ link environment
 ```
 ln zsh/.zshenv ~/.zshenv
 ```
+Disable SIP for yabai and sdk
 Run brew bundle install
 ```
 brew bundle install --file Brewbundle
 ```
-### Install oh my zsh
+### Install oh my zsh to .config folder
 ```
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cd .config && sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
+### Install powerline fonts and theme
+```
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
+#theme
+brew install pure
+```
+### copy the iterm profile.json to iterm > preferences > profile
