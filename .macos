@@ -344,7 +344,10 @@ echo "Applying spotlight defaults"
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write "/.Spotlight-V100/VolumeConfiguration Exclusions" -array "/Volumes"
+# This doessn't work anymore, bottom one does.
+# More info https://mattprice.me/2020/programmatically-modify-spotlight-ignore/
+#sudo defaults write "/.Spotlight-V100/VolumeConfiguration Exclusions" -array "/Volumes"
+sudo /usr/libexec/PlistBuddy -c "Add :Exclusions: string /Volumes/" /System/Volumes/Data/.Spotlight-V100/VolumeConfiguration.plist
 # Change indexing order and disable some search results
 # Yosemite-specific search results (remove them if you are using macOS 10.9 or older):
 # 	MENU_DEFINITION
