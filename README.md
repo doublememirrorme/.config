@@ -49,3 +49,4 @@ rm -rf fonts
 brew install pure
 ```
 ### copy the iterm profile.json to iterm > preferences > profile
+download SF PRO https://developer.apple.com/fonts/
