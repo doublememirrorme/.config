@@ -25,7 +25,7 @@
 
 (package-initialize)
 (unless package-archive-contents
- (package-refresh-contents))
+  (package-refresh-contents))
 
 ;; Initialize use-package on non-Linux platforms
 (unless (package-installed-p 'use-package)
@@ -34,10 +34,10 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; (defvar cindy/default-font-size 180)
-;; (set-face-attribute 'default nil :font "Fira Code" :height cindy/default-font-size)
-;; (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height cindy/default-font-size)
-;; (set-face-attribute 'variable-pitch nil :font "SF Pro Text" :height cindy/default-font-size :weight 'regular)
+(defvar cindy/default-font-size 180)
+(set-face-attribute 'default nil :font "Fira Code" :height cindy/default-font-size)
+(set-face-attribute 'fixed-pitch nil :font "Fira Code" :height cindy/default-font-size)
+(set-face-attribute 'variable-pitch nil :font "SF Pro Text" :height cindy/default-font-size :weight 'regular)
 
 ;; (defhydra hydra-text-scale (:timeout 4)
 ;;   "scale text"
@@ -45,23 +45,23 @@
 ;;   ("k" text-scale-decrease "out")
 ;;   ("f" nil "finished" :exit t))
 
-;; (use-package rainbow-delimiters
-;;   :hook (prog-mode . rainbow-delimiters-mode))
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 ;; Needs to be run first time 
-;; (use-package emojify
-;;   :hook (after-init . global-emojify-mode))
+(use-package emojify
+  :hook (after-init . global-emojify-mode))
 
 (setq custom-theme-directory "~/.config/emacs/themes/")
 
-;; (defun cindy/apply-theme (appearance)
-;;   "Load theme, taking current system APPEARANCE into consideration."
-;;   (mapc #'disable-theme custom-enabled-themes)
-;;   (pcase appearance
-;;     ('light (load-theme 'sexy-lady t))
-;;     ('dark (load-theme 'deeper-blue t))))
+(defun cindy/apply-theme (appearance)
+  "Load theme, taking current system APPEARANCE into consideration."
+  (mapc #'disable-theme custom-enabled-themes)
+  (pcase appearance
+    ('light (load-theme 'tinacious-design-light t))
+    ('dark (load-theme 'deeper-blue t))))
 
-;; (add-hook 'ns-system-appearance-change-functions #'cindy/apply-theme)
+(add-hook 'ns-system-appearance-change-functions #'cindy/apply-theme)
 
 (use-package all-the-icons)
 
@@ -208,26 +208,26 @@
 ;; (use-package visual-fill-column
 ;;   :hook (org-mode . cindy/org-mode-visual-fill))
 
-;; (use-package evil
-;;   :init
-;;   (setq evil-want-keybinding nil)
-;;   (setq evil-want-C-u-scroll t)
-;;   (setq evil-want-C-i-jump nil)
-;;   :config
-;;   (evil-mode 1)
-;;   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+(use-package evil
+  :init
+  (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump nil)
+  :config
+  (evil-mode 1)
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
 
-  ;; Use visual line motions even outside of visual-line-mode buffers
-;;   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
-;;   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+;; Use visual line motions even outside of visual-line-mode buffers
+(evil-global-set-key 'motion "j" 'evil-next-visual-line)
+(evil-global-set-key 'motion "k" 'evil-previous-visual-line)
 
-;;   (evil-set-initial-state 'messages-buffer-mode 'normal)
-;;   (evil-set-initial-state 'dashboard-mode 'normal))
+(evil-set-initial-state 'messages-buffer-mode 'normal)
+(evil-set-initial-state 'dashboard-mode 'normal))
 
-;; (use-package evil-collection
-;;   :after evil
-;;   :config
-;;   (evil-collection-init))
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
 
 ;; (require 'undo-tree)
 ;; (global-undo-tree-mode)
@@ -250,3 +250,15 @@
 ;;   :hook (typescript-mode . lsp-deferred)
 ;;   :config
 ;;   (setq typescript-indent-level 2))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(all-the-icons use-package)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

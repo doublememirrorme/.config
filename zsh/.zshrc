@@ -22,11 +22,13 @@ plugins=(
 	colored-man-pages
 	colorize
 	cp
-	zsh-syntax-highlighting
 	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
+
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
 # oh-my-zsh overrides the prompt, so Pure must be activated after sourcing oh-my-zsh.sh
 autoload -U promptinit; promptinit

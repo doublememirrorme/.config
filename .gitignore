@@ -1,0 +1,20 @@
+# ZSH
+zsh/.zcompdump*
+zsh/.zsh_history
+zsh/.zsh_sessions
+
+# Emacs
+
+## Autostave files
+*/**/*#*
+*#*
+
+## Swap files
+*/**/*~
+*~
+
+
+## Downloads
+emacs/elpa
+emacs/emojis
+emacs/transient
