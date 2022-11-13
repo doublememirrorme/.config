@@ -53,3 +53,5 @@ download SF PRO https://developer.apple.com/fonts/
 
 ## Emacs
 remove folder from home directory and link one from here to .config
+
+## Run .macos script
