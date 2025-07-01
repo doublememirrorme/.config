@@ -35,11 +35,32 @@ autoload -U promptinit; promptinit
 prompt pure
 
 export MANPATH=/usr/local/man:$MANPATH
+export PATH="$PATH:~/Projects/flutter/bin"
 
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+alias startmediaserver='docker-compose --file ~/Projects/emby/docker-compose.yml up --build -d'
+
+eval "$(pyenv init --path)"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
 [[ -s "/Users/hcanadjija/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/hcanadjija/.sdkman/bin/sdkman-init.sh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/hcanadija/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/hcanadija/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/hcanadija/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/hcanadija/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

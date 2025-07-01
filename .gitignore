@@ -4,6 +4,11 @@ zsh/.zcompdump*
 zsh/.zsh_history
 zsh/.zsh_sessions
 
+# Private environment files (contains sensitive tokens/keys)
+zsh/.zshenv.private
+.env.private
+**/.env.private
+
 # Emacs
 
 ## Autostave files
@@ -19,3 +24,6 @@ zsh/.zsh_sessions
 emacs/elpa
 emacs/emojis
 emacs/transient
+
+.DS_Store
+**/.DS_Store
